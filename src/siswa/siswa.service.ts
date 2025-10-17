@@ -32,11 +32,13 @@ export class SiswaService {
 
   private idCounter = this.siswaList.length + 1;
 
+  // Ambil semua data siswa
   getAllSiswa(): Siswa[] {
     return this.siswaList;
   }
 
+  // ✅ Ambil satu siswa berdasarkan ID
   getSiswaById(id: number): Siswa | undefined {
-    return this.siswaList.find((siswa) => siswa.id === id);
+    return this.siswaList.find((s) => s.id === id);
   }
 }

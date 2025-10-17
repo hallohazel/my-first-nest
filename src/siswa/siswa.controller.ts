@@ -6,11 +6,13 @@ import { Siswa } from './siswa.model';
 export class SiswaController {
   constructor(private readonly siswaService: SiswaService) {}
 
+  // Ambil semua siswa
   @Get()
   getAllSiswa(): Siswa[] {
     return this.siswaService.getAllSiswa();
   }
 
+  // Ambil siswa berdasarkan ID
   @Get(':id')
   getSiswaById(@Param('id') id: string): Siswa | { message: string } {
     const siswa = this.siswaService.getSiswaById(Number(id));
